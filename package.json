@@ -1,6 +1,6 @@
 {
   "name": "redux-injectables",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "redux-injectables - mobx like store",
   "main": "dist/main.js",
   "module": "dist/es.js",
