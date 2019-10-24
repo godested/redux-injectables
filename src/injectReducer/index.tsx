@@ -5,16 +5,14 @@ import { ReducerInjectableStore } from 'injectableReducer';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import getInjectors from './getInjectors';
 
-export function useInjectableReducer<R extends Reducer, S>(
+export function useInjectableReducer<R extends Reducer>(
   key: string,
   reducer: R
-): S {
+) {
   const { store } = useContext(ReactReduxContext);
 
   const injectors = getInjectors(store as ReducerInjectableStore);
   injectors.injectReducer(key, reducer);
-
-  return useSelector((state: { [key: string]: S }) => state[key]);
 }
 
 export default function injectReducer<R extends Reducer>(
